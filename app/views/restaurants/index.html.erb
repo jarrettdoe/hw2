@@ -1,9 +1,43 @@
-<h1>Restaurants: Animal Theme</h1>
 
-<ul>
-  <% for restaurant in Restaurant.all %>
-    <li>
-      <%= restaurant.name %>
-    </li>
-  <% end %>
-</ul>
+
+<head>
+  <title>Animal Restaurant of Chicago!</title>
+
+</head>
+
+<body>
+  <h1>Restaurants: Animal Theme</h1>
+
+  <ul>
+    <% for restaurant in Restaurant.all %>
+      <li>
+<!-- Display restuarant name -->
+        <%= restaurant.name %>
+<!-- add the at between restaurant name and address -->
+        at
+<!-- Display restaurant adress -->
+        <%= restaurant.address %>
+<!-- add Chicago, IL to the address -->
+        Chicago, IL
+        <p>
+          <img src="<%= restaurant.photo_url %>" height="200" width="200">
+        </p>
+          <a href="<%= restaurant.menu_url %>">
+            Menu available here
+          </a>
+        <p>
+<!-- Loop to check if I have eaten at this restaurant, if yes dispalys rating -->
+          <% if restaurant.visited == true %>
+            I have been here and give it <%= restaurant.rating %> out of 5!
+          <% else %>
+            I have yet to try this restraurant.
+          <% end %>
+        </p>
+
+      </li>
+    <% end %>
+
+  </ul>
+
+
+</body>
