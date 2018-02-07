@@ -1,3 +1,14 @@
+Restaurant
+  name: text
+  photo_url: text
+  address: text
+  rating: integer
+  menu_url: text
+  visited: boolean
+  visited_on: datetime
+
+
+
 # Example:
 #
 # Book
